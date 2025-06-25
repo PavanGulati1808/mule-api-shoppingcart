@@ -2,9 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.mycompany</groupId>
+	<groupId>7313f42c-e393-4200-b876-372a4503cc68</groupId>
 	<artifactId>mule-api-shoppingcart</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>mule-application</packaging>
 
 	<name>mule-api-shoppingcart</name>
@@ -29,6 +29,34 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
+				<configuration>
+					<classifier>mule-application</classifier>
+					   <cloudhub2Deployment>
+                        <uri>https://anypoint.mulesoft.com</uri>
+                        <provider>MC</provider>
+                        <environment>Sandbox</environment>
+                        <target>cloudhub-US-East-2</target>
+                        <server>Repository</server> <!-- this is where our credentials will be stored -->
+                        <applicationName>${project.artifactId}</applicationName>
+						<releaseChannel>LTS</releaseChannel>
+                        <replicas>1</replicas>
+                        <vCores>0.1</vCores>
+                        <deploymentSettings>
+                            <generateDefaultPublicUrl>true</generateDefaultPublicUrl>
+                        </deploymentSettings>
+                        <!-- Start: SECURED PROPERTIES CI/CD -->
+						<secureProperties>
+							<secure.key>${decryption.key}</secure.key> <!-- this comes from the build.yml / github secrets -->
+						</secureProperties>
+						<!-- End: SECURED PROPERTIES CI/CD -->
+
+						<!-- use `properties` for non-secured values -->
+						<!-- <properties>
+							<env>dev</env>
+						</properties> -->
+
+                    </cloudhub2Deployment>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
@@ -46,6 +74,18 @@
 			<version>1.2.5</version>
 			<classifier>mule-plugin</classifier>
 		</dependency>
+		<dependency>
+			<groupId>com.mulesoft.connectors</groupId>
+			<artifactId>mule-as2-connector</artifactId>
+			<version>6.9.3</version>
+			<classifier>mule-plugin</classifier>
+		</dependency>
+		<dependency>
+			<groupId>com.mulesoft.connectors</groupId>
+			<artifactId>mule-salesforce-connector</artifactId>
+			<version>10.22.4</version>
+			<classifier>mule-plugin</classifier>
+		</dependency>
 	</dependencies>
 
 	<repositories>
@@ -61,6 +101,12 @@
 			<url>https://repository.mulesoft.org/releases/</url>
 			<layout>default</layout>
 		</repository>
+		<repository>
+			<id>Repository</id>
+			<name>MuleSoft Private Exchange Repository</name>
+			<url>https://maven.anypoint.mulesoft.com/api/v3/organizations/${project.groupId}/maven</url>
+			<layout>default</layout>
+		</repository>
 	</repositories>
 
 	<pluginRepositories>
@@ -74,5 +120,13 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
+	<distributionManagement>
+		<repository>
+			<id>Repository</id>
+			<name>MuleSoft Private Exchange Repository</name>
+			<url>https://maven.anypoint.mulesoft.com/api/v3/organizations/${project.groupId}/maven</url>
+			<layout>default</layout>
+		</repository>
+	</distributionManagement>
 
 </project>

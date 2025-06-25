@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
-	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
-http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+<mule xmlns:sockets="http://www.mulesoft.org/schema/mule/sockets" xmlns:salesforce="http://www.mulesoft.org/schema/mule/salesforce"
+	xmlns:as2-mule4="http://www.mulesoft.org/schema/mule/as2-mule4"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/as2-mule4 http://www.mulesoft.org/schema/mule/as2-mule4/current/mule-as2-mule4.xsd
+http://www.mulesoft.org/schema/mule/salesforce http://www.mulesoft.org/schema/mule/salesforce/current/mule-salesforce.xsd
+http://www.mulesoft.org/schema/mule/sockets http://www.mulesoft.org/schema/mule/sockets/current/mule-sockets.xsd">
 	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="07dd2e39-2998-46ba-a0d4-af4e59860744" >
 		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
 	<flow name="mule-api-shoppingcartFlow" doc:id="8cafb8c4-c8c5-4b18-a0ae-3bdd17756a67" >
-		<http:listener doc:name="Listener" doc:id="299a6b9b-f77d-4a2c-981e-2281d4e2f0cf" config-ref="HTTP_Listener_config" path="/hello"/>
-		<logger level="INFO" doc:name="Logger" doc:id="b4a1c9d0-cef3-46ad-a59d-53966269ea20" message="Hello"/>
+		<http:listener doc:name="Listener" doc:id="299a6b9b-f77d-4a2c-981e-2281d4e2f0cf" config-ref="HTTP_Listener_config" path="/upsert"/>
+		<logger level="INFO" doc:name="Logger" doc:id="b4a1c9d0-cef3-46ad-a59d-53966269ea20" message="Hello after changes"/>
+	</flow>
+	<flow name="mule-api-shoppingcartFlow1" doc:id="877505ca-062f-4d97-8b84-165484d00d14" >
+		<http:listener doc:name="Listener" doc:id="4392a0b1-6a35-44f2-b050-a5d7562afd18" config-ref="HTTP_Listener_config" path="/SendEvent"/>
 	</flow>
 </mule>
