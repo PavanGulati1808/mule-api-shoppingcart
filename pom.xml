@@ -33,18 +33,18 @@
 				<configuration>
 					<classifier>mule-application</classifier>
 					   <cloudhub2Deployment>
-                        <uri>https://anypoint.mulesoft.com</uri>
-                        <provider>MC</provider>
-                        <environment>Sandbox</environment>
-                      <!--    <target>Cloudhub-US-East-2</target> -->
-                        <server>Repository</server> <!-- this is where our credentials will be stored -->
-                        <applicationName>${project.artifactId}</applicationName>
-						<releaseChannel>Edge</releaseChannel>
-                        <replicas>1</replicas>
-                        <vCores>0.1</vCores>
-                        <deploymentSettings>
-                            <generateDefaultPublicUrl>true</generateDefaultPublicUrl>
-                        </deploymentSettings>
+                 <uri>https://anypoint.mulesoft.com</uri>
+				  <provider>MC</provider>
+				  <environment>Sandbox</environment>
+				  <region>us-east-1</region> <!-- ✅ Set public region explicitly -->
+				  <server>Repository</server> <!-- Reference to credentials in settings.xml -->
+				  <applicationName>${project.artifactId}</applicationName>
+				  <releaseChannel>Edge</releaseChannel>
+				  <replicas>1</replicas>
+				  <vCores>0.1</vCores>
+				  <deploymentSettings>
+				    <generateDefaultPublicUrl>true</generateDefaultPublicUrl>
+				  </deploymentSettings>
                         <!-- Start: SECURED PROPERTIES CI/CD
 						<secureProperties>
 							<secure.key>${decryption.key}</secure.key>  this comes from the build.yml / github secrets 
