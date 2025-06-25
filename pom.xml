@@ -121,6 +121,7 @@
 		</pluginRepository>
 	</pluginRepositories>
 	<distributionManagement>
+	
 		<repository>
 			<id>Repository</id>
 			<name>MuleSoft Private Exchange Repository</name>
