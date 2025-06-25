@@ -4,7 +4,8 @@
 
 	<groupId>7313f42c-e393-4200-b876-372a4503cc68</groupId>
 	<artifactId>mule-api-shoppingcart</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
+	
 	<packaging>mule-application</packaging>
 
 	<name>mule-api-shoppingcart</name>
