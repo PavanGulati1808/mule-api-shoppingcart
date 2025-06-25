@@ -2,7 +2,7 @@ name: Publish to Exchange & Deploy to CH2.0
 
 on:
   push:
-    branches: [ Dev ]
+    branches: [ ** ]
     
 jobs:         
   build:
@@ -34,5 +34,4 @@ jobs:
         run: |
           mvn deploy --settings .maven/settings.xml -DskipMunitTests -DmuleDeploy \
           -Dclient.id="${{ secrets.CONNECTED_APP_CLIENT_ID }}" \
-          -Dclient.secret="${{ secrets.CONNECTED_APP_CLIENT_SECRET }}" \
-          -Ddecryption.key="${{ secrets.DECRYPTION_KEY }}"
+          -Dclient.secret="${{ secrets.CONNECTED_APP_CLIENT_SECRET }}" 
