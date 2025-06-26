@@ -46,7 +46,7 @@
             <vCores>0.1</vCores>
      <!--        <runtimeVersion>${app.runtime}</runtimeVersion>  ✅ Explicit runtime -->
             <deploymentSettings>
-              <region>us-east-2</region> <!-- ✅ Explicit valid region -->
+
               <generateDefaultPublicUrl>true</generateDefaultPublicUrl>
             </deploymentSettings>
             
