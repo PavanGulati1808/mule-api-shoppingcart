@@ -4,12 +4,10 @@
 
 	<groupId>7313f42c-e393-4200-b876-372a4503cc68</groupId>
 	<artifactId>mule-api-shoppingcart</artifactId>
-	<version>1.0.1</version>
-	
+	<version>1.0.2</version>
 	<packaging>mule-application</packaging>
 
 	<name>mule-api-shoppingcart</name>
-
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -31,28 +29,34 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-					<classifier>mule-application</classifier>
-					   <cloudhub2Deployment>
-                 <uri>https://anypoint.mulesoft.com</uri>
-				  <provider>MC</provider>
-				  <environment>Sandbox</environment>
-				  <target>Cloudhub-US-East-2</target> <!-- ✅ Set public region explicitly -->
-				  <server>Repository</server> <!-- Reference to credentials in settings.xml -->
-				  <applicationName>${project.artifactId}</applicationName>
-				  <releaseChannel>EDGE</releaseChannel>
-				  <replicas>1</replicas>
-				  <vCores>0.1</vCores>
-				  <deploymentSettings>
-				    <generateDefaultPublicUrl>true</generateDefaultPublicUrl>
-				  </deploymentSettings>
-                        <!-- Start: SECURED PROPERTIES CI/CD
+					<classifier>---- select project type ----</classifier>
+					<cloudhub2Deployment>
+						<uri>https://anypoint.mulesoft.com</uri>
+						<provider>MC</provider>
+						<environment>Sandbox</environment>
+						<target>Cloudhub-US-East-2</target>
+						<!-- ✅ Set public region explicitly -->
+						<server>Repository</server>
+						<!-- Reference to credentials in settings.xml -->
+						<applicationName>${project.artifactId}</applicationName>
+						<releaseChannel>EDGE</releaseChannel>
+						<replicas>1</replicas>
+						<vCores>0.1</vCores>
+						<deploymentSettings>
+							<generateDefaultPublicUrl>true</generateDefaultPublicUrl>
+						</deploymentSettings>
+						<!-- Start: SECURED PROPERTIES CI/CD
 						<secureProperties>
 							<secure.key>${decryption.key}</secure.key>  this comes from the build.yml / github secrets 
 						</secureProperties>
 						 End: SECURED PROPERTIES CI/CD -->
-=
+																								=
 
-                    </cloudhub2Deployment>
+
+
+
+
+					</cloudhub2Deployment>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -118,7 +122,6 @@
 		</pluginRepository>
 	</pluginRepositories>
 	<distributionManagement>
-	
 		<repository>
 			<id>Repository</id>
 			<name>MuleSoft Private Exchange Repository</name>
