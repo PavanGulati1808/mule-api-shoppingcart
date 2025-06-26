@@ -49,6 +49,7 @@
             <deploymentSettings>
               <generateDefaultPublicUrl>true</generateDefaultPublicUrl>
             </deploymentSettings>
+            
             <!-- Uncomment if using secure properties -->
             <!--
             <secureProperties>
