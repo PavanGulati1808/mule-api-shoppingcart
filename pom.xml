@@ -38,7 +38,7 @@
             <provider>MC</provider>
             <environment>Sandbox</environment>
             <target>Cloudhub-US-East-2</target>
-            <region>us-east-2</region> <!-- ✅ Explicit valid region -->
+     
             <server>Repository</server> <!-- Reference to settings.xml credentials -->
             <muleVersion>4.4.0</muleVersion>
             <applicationName>${project.artifactId}</applicationName>
@@ -47,6 +47,7 @@
             <vCores>0.1</vCores>
             <runtimeVersion>${app.runtime}</runtimeVersion> <!-- ✅ Explicit runtime -->
             <deploymentSettings>
+              <region>us-east-2</region> <!-- ✅ Explicit valid region -->
               <generateDefaultPublicUrl>true</generateDefaultPublicUrl>
             </deploymentSettings>
             
