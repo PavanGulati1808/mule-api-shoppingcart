@@ -16,8 +16,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-    <app.runtime>4.9.6</app.runtime> <!-- ✅ Updated to supported version -->
-    <mule.maven.plugin.version>4.2.0</mule.maven.plugin.version>
+    <app.runtime>4.9.0</app.runtime> <!-- ✅ Updated to supported version -->
+    <mule.maven.plugin.version>3.8.1</mule.maven.plugin.version>
   </properties>
 
   <build>
@@ -39,7 +39,7 @@
             <environment>Sandbox</environment>
             <target>Cloudhub-US-East-2</target>
             <server>Repository</server> <!-- Reference to settings.xml credentials -->
-            <muleVersion>4.9.6</muleVersion>
+            <muleVersion>4.9.0</muleVersion>
             <applicationName>${project.artifactId}</applicationName>
             <releaseChannel>EDGE</releaseChannel>
             <replicas>1</replicas>
