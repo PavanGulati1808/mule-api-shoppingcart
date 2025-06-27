@@ -42,7 +42,7 @@
             <muleVersion>4.9.0</muleVersion>
             <applicationName>${project.artifactId}</applicationName>
 			<releaseChannel>EDGE</releaseChannel>
-			<javaVersion>17</javaVersion>
+
             <replicas>1</replicas>
             <vCores>0.1</vCores>
      <!--        <runtimeVersion>${app.runtime}</runtimeVersion>  ✅ Explicit runtime -->
