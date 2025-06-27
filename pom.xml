@@ -41,14 +41,12 @@
             <server>Repository</server> <!-- Reference to settings.xml credentials -->
             <muleVersion>4.9.0</muleVersion>
             <applicationName>${project.artifactId}</applicationName>
-
+			<releaseChannel>LTS</releaseChannel>
+			<javaVersion>17</javaVersion>
             <replicas>1</replicas>
             <vCores>0.1</vCores>
      <!--        <runtimeVersion>${app.runtime}</runtimeVersion>  ✅ Explicit runtime -->
-            <deploymentSettings>
 
-              <generateDefaultPublicUrl>true</generateDefaultPublicUrl>
-            </deploymentSettings>
             
             <!-- Uncomment if using secure properties -->
             <!--
