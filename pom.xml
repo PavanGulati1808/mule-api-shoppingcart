@@ -41,7 +41,7 @@
             <server>Repository</server> <!-- Reference to settings.xml credentials -->
             <muleVersion>4.9.0</muleVersion>
             <applicationName>${project.artifactId}</applicationName>
-			<releaseChannel>LTS</releaseChannel>
+			<releaseChannel>EDGE</releaseChannel>
 			<javaVersion>17</javaVersion>
             <replicas>1</replicas>
             <vCores>0.1</vCores>
