@@ -45,9 +45,7 @@
 			<javaVersion>17</javaVersion>
             <replicas>1</replicas>
             <vCores>0.1</vCores>
-     <!--        <runtimeVersion>${app.runtime}</runtimeVersion>  ✅ Explicit runtime -->
-
-            
+     <!--        <runtimeVersion>${app.runtime}</runtimeVersion>  ✅ Explicit runtime -->        
             <!-- Uncomment if using secure properties -->
             <!--
             <secureProperties>
