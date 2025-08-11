@@ -12,6 +12,6 @@ http://www.mulesoft.org/schema/mule/sockets http://www.mulesoft.org/schema/mule/
 	</http:listener-config>
 	<flow name="mule-api-shoppingcartFlow" doc:id="8cafb8c4-c8c5-4b18-a0ae-3bdd17756a67" >
 		<http:listener doc:name="Listener" doc:id="299a6b9b-f77d-4a2c-981e-2281d4e2f0cf" config-ref="HTTP_Listener_config" path="/upsert"/>
-		<logger level="INFO" doc:name="Logger" doc:id="b4a1c9d0-cef3-46ad-a59d-53966269ea20" message="Hello after changes"/>
+		<logger level="INFO" doc:name="Logger" doc:id="b4a1c9d0-cef3-46ad-a59d-53966269ea20" message="Hello after changes - one more change"/>
 	</flow>
 </mule>
